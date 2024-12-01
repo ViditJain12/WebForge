@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        <p>Showing results for: <strong>{{ query }}</strong></p>
+        <ul>
+        {% for result in results %}
+            <li><a href="{{ result }}" target="_blank">{{ result }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="/">Back to Search</a>
+</body>
+</html>
